@@ -5,11 +5,15 @@
 USE bcn3_proj;  -- MySQL command
 
 -- create the tables
+DROP TABLE IF EXISTS `accounts`;
+
 CREATE TABLE categories (
   categoryID       INT(11)        NOT NULL   AUTO_INCREMENT,
   categoryName     VARCHAR(255)   NOT NULL,
   PRIMARY KEY (categoryID)
 );
+
+DROP TABLE IF EXISTS `products`;
 
 CREATE TABLE products (
   productID        INT(11)        NOT NULL   AUTO_INCREMENT,
@@ -19,6 +23,8 @@ CREATE TABLE products (
   listPrice        DECIMAL(10,2)  NOT NULL,
   PRIMARY KEY (productID)
 );
+
+DROP TABLE IF EXISTS `orders`;
 
 CREATE TABLE orders (
   orderID        INT(11)        NOT NULL   AUTO_INCREMENT,
